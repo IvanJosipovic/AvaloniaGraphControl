@@ -15,10 +15,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia.LinuxFrameBuffer" Version="$(AvaloniaVersion)"/>
-    <PackageReference Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)">
-      <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
-      <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
-    </PackageReference>
     <ProjectReference Include="..\sample\AvaloniaGraphControlSample.csproj"/>
   </ItemGroup>
 </Project>

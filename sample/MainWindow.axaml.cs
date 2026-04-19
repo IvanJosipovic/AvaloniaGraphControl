@@ -1,6 +1,4 @@
-﻿using System;
-using Avalonia;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
 namespace AvaloniaGraphControlSample
@@ -10,9 +8,6 @@ namespace AvaloniaGraphControlSample
     public MainWindow()
     {
       InitializeComponent();
-#if DEBUG
-      this.AttachDevTools();
-#endif
     }
 
 

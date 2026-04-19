@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using Avalonia;
+using Avalonia.Input;
 
 namespace AvaloniaGraphControlSample.Desktop;
 
@@ -19,7 +20,11 @@ class Program
       .UsePlatformDetect()
       .WithInterFont()
       .LogToTrace()
-      .SetUrlOpener(OpenUrl);
+      .SetUrlOpener(OpenUrl)
+      .WithDeveloperTools(options =>
+      {
+        options.Gesture = KeyGesture.Parse("F12");
+      });
   
   private static void OpenUrl(string url)
   {
