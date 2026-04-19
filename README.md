@@ -1,5 +1,5 @@
 # AvaloniaGraphControl
-A graph layout panel for [AvaloniaUI](https://github.com/AvaloniaUI/Avalonia)
+A graph layout panel for [Avalonia](https://github.com/AvaloniaUI/Avalonia) cross-platform UI framework
 
 ## Usage
 Each individual graph is displayed through the GraphPanel control included in the assembly
@@ -44,6 +44,24 @@ Each node of the graph view can be customized according to the underlying view m
 
 As shown in the demo, this graph panel can be used in cross-platform AvaloniaUI applications.
 It was successfully tested on Linux Desktop, Windows Desktop, Android and Browser (web assembly) environments.
+
+## Contributing
+
+No new feature is planned for this project.
+
+Contributions shall be limited to:
+- Bug fixes (add a graph sample that reproduces the issue)
+- Avalonia versions upgrades
+- .NET versions upgrades
+
+Before submitting any pull request, make sure that **all** AvaloniaGraphControl samples work as expected on all supported platforms.
+
+### Custom MSAGL version
+
+This project uses [a custom version of MSAGL](https://github.com/Oaz/automatic-graph-layout) on purpose.
+
+Additional pre-requisites to move to a standard MSAGL version:
+- [Fixing this issue on MSAGL](https://github.com/microsoft/automatic-graph-layout/issues/228) to make [ordered layout on a subgraph](./sample/SimpleGraphs/SimpleOrderedLayoutWithSubgraph.cs) work as expected.
 
 ## Example of graph definition
 
