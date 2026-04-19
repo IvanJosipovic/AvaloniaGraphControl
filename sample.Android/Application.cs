@@ -27,6 +27,7 @@ public class AndroidApp : AvaloniaAndroidApplication<App>
   {
     var uri = Uri.Parse(url);
     var intent = new Intent(Intent.ActionView, uri);
+    intent.SetFlags(ActivityFlags.NewTask);
     StartActivity(intent);
   }
 }
