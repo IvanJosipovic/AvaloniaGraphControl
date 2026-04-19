@@ -21,8 +21,8 @@ public class ZoomBorderHelper
   public ZoomBorderHelper(ZoomBorder border)
   {
     Border = border;
-    Border.AttachedToVisualTree += (_, _) => Border.AddHandler(Gestures.PinchEvent, PinchHandler);
-    Border.DetachedFromVisualTree += (_, _) => Border.RemoveHandler(Gestures.PinchEvent, PinchHandler);
+    Border.AttachedToVisualTree += (_, _) => Border.AddHandler(InputElement.PinchEvent, PinchHandler);
+    Border.DetachedFromVisualTree += (_, _) => Border.RemoveHandler(InputElement.PinchEvent, PinchHandler);
   }
 
 }

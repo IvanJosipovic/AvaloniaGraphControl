@@ -26,7 +26,7 @@ namespace AvaloniaGraphControlSample
       var bbc = new State("BBC", Brushes.Yellow);
       var bbd = new State("BBD", Brushes.Yellow);
       var c = new State("C", Brushes.CornflowerBlue);
-      static Edge CreateEdge(object x, object y, object label = null) => new Edge(x, y, label);
+      static Edge CreateEdge(object x, object y, object label = null!) => new Edge(x, y, label);
       Edges.Add(CreateEdge(initMain, a));
       Edges.Add(CreateEdge(a, b, "aTob"));
       Edges.Add(CreateEdge(b, c, "bToc"));

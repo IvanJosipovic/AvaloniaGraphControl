@@ -19,6 +19,7 @@ class Program
       {
         DefaultFamilyName = "avares://Avalonia.Fonts.Inter/Assets#Inter"
       })
+      .UseHarfBuzz()
       .LogToTrace()
       .SetUrlOpener(OpenUrl);
   

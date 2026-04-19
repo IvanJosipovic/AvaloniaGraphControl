@@ -20,7 +20,7 @@ namespace AvaloniaGraphControlSample
       var starting = new State("Starting", Brushes.Yellow);
       var started = new State("Started", Brushes.Yellow);
       var pausing = new State("Pausing", Brushes.Yellow);
-      static Edge CreateEdge(object x, object y, object label = null) => new Edge(x, y, label);
+      static Edge CreateEdge(object x, object y, object label = null!) => new Edge(x, y, label);
       Edges.Add(CreateEdge(initMain, off));
       Edges.Add(CreateEdge(off, on, "SwitchOn"));
       Edges.Add(CreateEdge(on, cleaning, "SwitchOff"));

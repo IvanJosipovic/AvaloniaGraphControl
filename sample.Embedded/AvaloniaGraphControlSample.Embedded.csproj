@@ -15,6 +15,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia.LinuxFrameBuffer" Version="$(AvaloniaVersion)"/>
+    <PackageReference Include="Avalonia.HarfBuzz" Version="$(AvaloniaVersion)"/>
     <ProjectReference Include="..\sample\AvaloniaGraphControlSample.csproj"/>
   </ItemGroup>
 </Project>

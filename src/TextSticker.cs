@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Layout;
 using Avalonia.Media;
+using Microsoft.Msagl.Drawing;
 
 namespace AvaloniaGraphControl
 {
@@ -13,7 +14,7 @@ namespace AvaloniaGraphControl
     public static readonly StyledProperty<double> BorderThicknessProperty = AvaloniaProperty.Register<TextSticker, double>(nameof(BorderThickness), 1);
     public static readonly StyledProperty<double> BorderRadiusProperty = AvaloniaProperty.Register<TextSticker, double>(nameof(BorderRadius), 3);
     public static readonly StyledProperty<FontWeight> FontWeightProperty = AvaloniaProperty.Register<TextSticker, FontWeight>(nameof(FontWeight), FontWeight.Normal);
-    public static readonly StyledProperty<FontStyle> FontStyleProperty = AvaloniaProperty.Register<TextSticker, FontStyle>(nameof(FontStyle));
+    public static readonly StyledProperty<Avalonia.Media.FontStyle> FontStyleProperty = AvaloniaProperty.Register<TextSticker, Avalonia.Media.FontStyle>(nameof(FontStyle));
     public static readonly StyledProperty<double> FontSizeProperty = AvaloniaProperty.Register<TextSticker, double>(nameof(FontSize), 12);
     public static readonly StyledProperty<FontFamily> FontFamilyProperty = AvaloniaProperty.Register<TextSticker, FontFamily>(nameof(FontFamily), FontFamily.Default);
     public static readonly StyledProperty<Thickness> PaddingProperty = AvaloniaProperty.Register<TextSticker, Thickness>(nameof(Padding), new Thickness(10, 5));
@@ -37,7 +38,7 @@ namespace AvaloniaGraphControl
       TextForegroundProperty.Changed.AddClassHandler<TextSticker>((ts, ea) => ts.textBlock.Foreground = (IBrush)ea.NewValue);
       BorderThicknessProperty.Changed.AddClassHandler<TextSticker>((ts, ea) => ts.border.BorderThickness = (double)ea.NewValue);
       FontWeightProperty.Changed.AddClassHandler<TextSticker>((ts, ea) => ts.textBlock.FontWeight = (FontWeight)ea.NewValue);
-      FontStyleProperty.Changed.AddClassHandler<TextSticker>((ts, ea) => ts.textBlock.FontStyle = (FontStyle)ea.NewValue);
+      FontStyleProperty.Changed.AddClassHandler<TextSticker>((ts, ea) => ts.textBlock.FontStyle = (Avalonia.Media.FontStyle)ea.NewValue);
       FontSizeProperty.Changed.AddClassHandler<TextSticker>((ts, ea) => ts.textBlock.FontSize = (double)ea.NewValue);
       FontFamilyProperty.Changed.AddClassHandler<TextSticker>((ts, ea) => ts.textBlock.FontFamily = (FontFamily)ea.NewValue);
       TextProperty.Changed.AddClassHandler<TextSticker>((ts, ea) => ts.textBlock.Text = (string)ea.NewValue);
@@ -81,7 +82,7 @@ namespace AvaloniaGraphControl
       get => GetValue(FontWeightProperty);
       set => SetValue(FontWeightProperty, value);
     }
-    public FontStyle FontStyle
+    public Avalonia.Media.FontStyle FontStyle
     {
       get => GetValue(FontStyleProperty);
       set => SetValue(FontStyleProperty, value);

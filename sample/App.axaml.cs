@@ -8,12 +8,13 @@ namespace AvaloniaGraphControlSample
 {
   public class App : Application
   {
-    private Action<string> _openUrl = _ => {};
+    private Action<string> _openUrl = _ => { };
+
     public void SetUrlOpener(Action<string> openUrl)
     {
       _openUrl = openUrl;
     }
-    
+
     public override void Initialize()
     {
       AvaloniaXamlLoader.Load(this);
@@ -24,19 +25,17 @@ namespace AvaloniaGraphControlSample
       Trace.Listeners.Add(new ConsoleTraceListener());
       if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
       {
-        desktop.MainWindow = new MainWindow()
-        {
-          DataContext = new Model(_openUrl)
-        };
+        desktop.MainWindow = new MainWindow() { DataContext = new Model(_openUrl) };
+      }
+      else if (ApplicationLifetime is IActivityApplicationLifetime activityLifetime)
+      {
+        activityLifetime.MainViewFactory = () => new MainView { DataContext = new Model(_openUrl) };
       }
       else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
       {
-        singleViewPlatform.MainView = new MainView
-        {
-          DataContext = new Model(_openUrl)
-        };
+        singleViewPlatform.MainView = new MainView { DataContext = new Model(_openUrl) };
       }
-      
+
       base.OnFrameworkInitializationCompleted();
     }
   }
